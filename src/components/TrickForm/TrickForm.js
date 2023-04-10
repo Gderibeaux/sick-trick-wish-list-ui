@@ -18,8 +18,9 @@ class TrickForm extends Component {
     handleSubmit = event => {
         event.preventDefault();
         const newTrick = {
-           stance: this.state.stance,
-           obstacle: this.state.obstacle
+            id: Date.now(),
+            stance: this.state.stance,
+            obstacle: this.state.obstacle
         }
         this.props.addTrick(newTrick)
     }
