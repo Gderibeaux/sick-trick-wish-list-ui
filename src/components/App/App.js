@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css';
 import {fetchTricks} from '../../apiCalls'
 import TrickContainer from '../trickContainer/TrickContainer';
+import TrickForm from '../TrickForm/TrickForm'
 
 class App extends Component {
   constructor(props){
@@ -24,12 +25,17 @@ class App extends Component {
      
     })
   }
+  addTrick = (newTrick) => {
+    this.setState({ tricks: [...this.state.tricks, newTrick] });
+  }
+
   render() {
     console.log(this.state.tricks)
     return (
       <div className="App">
         <h1>{console.log('PROPS', this.state.tricks)}</h1>
         <h1>Sick Trick Wish List</h1>
+       <TrickForm addTrick={this.addTrick}/>
        <TrickContainer tricks={this.state.tricks} />
       </div>
     );

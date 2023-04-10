@@ -6,8 +6,8 @@ const TrickContainer = props => {
     const newTricks = props.tricks.map(tricks => {
         return (
             <div className="tricks">
-                <h3>{tricks.name}</h3>
-                <p>{tricks.stance}</p>
+                <h3>{tricks.stance}</h3>
+                <p>{tricks.obstacle}</p>
             </div>
         )
     })
